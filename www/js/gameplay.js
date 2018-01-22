@@ -18,7 +18,7 @@ function createblock()
 {
 
   $(".gameSpace").append("<div id=B" + count + " class=enemy ></div>");
-  $("enemy"+count).offset({ top: 0, left: positionLaterAlealeatoire() });
+  $("enemy"+count).position({ top: 0, left: positionLaterAlealeatoire() });
   ingame.append("enemy"+count);
 }
 
@@ -31,11 +31,12 @@ $(id).remove();
 
 function deplacergauche()
 {
-	let leftPos = $(".player").offset().left;
+	let leftPosDoc = $(".player").offset().left;
+	let leftPos = $(".player").position().left;
 	console.log(leftPos);
 	if(leftPos>0)
 	{
-	  $(".player").offset({left : leftPos-1});
+	  $(".player").offset({left : leftPosDoc-3});
 	}
 	
 
@@ -44,11 +45,12 @@ function deplacergauche()
 function deplacerdroite()
 {
 
-	let leftPos = $(".player").offset().left;
+	let leftPosDoc = $(".player").offset().left;
+	let leftPos = $(".player").position().left;
 	console.log(leftPos);
-	if(leftPos<largeur.substr(0, largeur.length-2))
+	if(leftPos<(largeur.substr(0, largeur.length-2)-10))
 	{
-	  $(".player").offset({left : leftPos+1});
+	  $(".player").offset({left : leftPosDoc+3});
 	}
 
 }
