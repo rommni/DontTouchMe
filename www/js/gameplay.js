@@ -13,7 +13,6 @@ let timer= 0;
 let intervalTimer = setInterval(function(){
 									timer+=1000;
 									$("#time").text(new Date(timer).toTimeString().replace(/.*(\d{2}:\d{2}).*/, "$1"));
-									console.log(timer);
 									}, 1000);
 
 function positionLaterAlealeatoire()
