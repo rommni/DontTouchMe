@@ -32,6 +32,7 @@ $(id).remove();
 function deplacergauche()
 {
 	let leftPos = $(".player").offset().left;
+	console.log(leftPos);
 	if(leftPos>0)
 	{
 	  $(".player").offset({left : leftPos-1});
@@ -44,7 +45,8 @@ function deplacerdroite()
 {
 
 	let leftPos = $(".player").offset().left;
-	if(leftPos>0)
+	console.log(leftPos);
+	if(leftPos<largeur.substr(0, largeur.length-2))
 	{
 	  $(".player").offset({left : leftPos+1});
 	}
@@ -56,7 +58,7 @@ function deplacement(event) {
     if (x == 37) {  
         deplacergauche();
     }
-    if (x == 39) {  // 27 is the ESC key
+    if (x == 39) {  
         deplacerdroite();
     }
 	
