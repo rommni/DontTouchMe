@@ -26,7 +26,7 @@ function createblock()
 
   $(".gameSpace").append("<div id=B" + count + " class=enemy ></div>");
   $("enemy"+count).position({ top: 0, left: positionLaterAlealeatoire() });
-  ingame.append("enemy"+count);
+  ingame.push("enemy"+count);
 }
 
 function deleteblock(id)
