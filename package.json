@@ -1,13 +1,13 @@
 {
-    "name": "helloworld",
-    "displayName": "HelloCordova",
+    "name": "DontTouchMe",
+    "displayName": "DontTouchMe",
     "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "description": "Petit jeu simple pour un projet de Télécom Saint Etienne",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Apache Cordova Team",
+    "author": "Julian Romain et Laurier Alexis",
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-browser": "^5.0.3",
