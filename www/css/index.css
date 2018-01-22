@@ -30,3 +30,8 @@ h1{
 	width: 30px;
 	height: 10px;
 }
+
+.score{
+	position relative;
+	float: right;
+}
