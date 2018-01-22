@@ -1,7 +1,7 @@
 //configuration du jeux
 
 let gametime = 120; //temps de jeux
-let largeur = $("#gameSpace").css("width"); //largeur de la zone de jeux
+let largeur = $(".gameSpace").css("width"); //largeur de la zone de jeux
 
 
 //Variable globale du jeu
@@ -17,7 +17,7 @@ function positionLaterAlealeatoire()
 function createblock()
 {
 
-  $("#gameSpace").append("<div id=B" + count + " class=enemy ></div>");
+  $(".gameSpace").append("<div id=B" + count + " class=enemy ></div>");
   $("enemy"+count).offset({ top: 0, left: positionLaterAlealeatoire() });
   ingame.append("enemy"+count);
 }
@@ -31,32 +31,35 @@ $(id).remove();
 
 function deplacergauche()
 {
-
-if($("player").css("left")>0)
-{
-  $("player").css("left","-=1px");
-}
+	let leftPos = $(".player").offset().left;
+	if(leftPos>0)
+	{
+	  $(".player").offset({left : leftPos-1});
+	}
+	
 
 }
 
 function deplacerdroite()
 {
 
-if($("player").css("left")< largeur )
-{
-  $("player").css("left","+=1px");
-}
+	let leftPos = $(".player").offset().left;
+	if(leftPos>0)
+	{
+	  $(".player").offset({left : leftPos+1});
+	}
 
 }
 
 function deplacement(event) {
     var x = event.which || event.keyCode; // event.keyCode is used for IE8 and earlier
-    if (x == 27) {  // 27 is the ESC key
+    if (x == 37) {  
         deplacergauche();
     }
     if (x == 39) {  // 27 is the ESC key
         deplacerdroite();
     }
+	
 }
 
 /// Zone de gestion du jeux
