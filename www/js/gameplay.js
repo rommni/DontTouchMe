@@ -38,7 +38,7 @@ function deplacergauche()
 	{
 	  $(".player").offset({left : leftPosDoc-3});
 	}
-	
+
 
 }
 
@@ -57,22 +57,11 @@ function deplacerdroite()
 
 function deplacement(event) {
     var x = event.which || event.keyCode; // event.keyCode is used for IE8 and earlier
-    if (x == 37) {  
+    if (x == 37) {
         deplacergauche();
     }
-    if (x == 39) {  
+    if (x == 39) {
         deplacerdroite();
     }
-	
-}
-
-/// Zone de gestion du jeux
-function inGame()
-{
-
-
 
 }
-
-var interval = setInterval(inGame(),50);
-document.addEventListener("keydown", deplacement, false);
