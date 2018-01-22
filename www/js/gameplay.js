@@ -15,18 +15,19 @@ let intervalTimer = setInterval(function(){
 									$("#time").text(new Date(timer).toTimeString().replace(/.*(\d{2}:\d{2}).*/, "$1"));
 									}, 1000);
 
-									
+
 function positionLaterAlealeatoire()
 {
-    return Math.round(Math.random() * largeur);
+    return Math.round(Math.round(Math.random() * (largeur.substring(0,largeur.length-2)-30)));
 }
 
 function createblock()
 {
 
-  $(".gameSpace").append("<div id=B" + count + " class=enemy ></div>");
-  $("enemy"+count).position({ top: 0, left: positionLaterAlealeatoire() });
-  ingame.push("enemy"+count);
+  $(".gameSpace").append("<div id=enemy" + count + " class=enemy ></div>");
+  $("#enemy"+count).css("left", positionLaterAlealeatoire());
+  ingame.push("#enemy"+count);
+  count+=1;
 }
 
 function deleteblock(id)
